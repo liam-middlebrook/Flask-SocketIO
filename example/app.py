@@ -10,6 +10,8 @@ async_mode = None
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+app.config['IP'] = '0.0.0.0'
+app.config['PORT'] = 8080
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 
