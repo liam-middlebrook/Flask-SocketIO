@@ -10,8 +10,6 @@ async_mode = None
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-app.config['IP'] = '0.0.0.0'
-app.config['PORT'] = 8080
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 
@@ -109,4 +107,4 @@ def test_disconnect():
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True, host='0.0.0.0', port=8080)
